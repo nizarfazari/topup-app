@@ -1,0 +1,19 @@
+@theme {
+ --color-primary: #FF8130;
+ --color-secondary: #00929D;
+
+ --color-info: #1A73E8;
+ --color-success: #16A34A;
+ --color-warning: #FF9500;
+ --color-danger: #DC2626;
+
+ --color-black: #1E293B;
+ --color-white: #FFFFFF;
+ --color-gray: #94A3B8;
+
+ --color-background-primary: #191D24;
+ --color-background-secondary: #272B35;
+
+ --color-button-primary-bg: #1B2029;
+ --color-button-primary-text: var(--color-white);
+}

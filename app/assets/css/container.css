@@ -1,0 +1,39 @@
+/* Tambahkan ini ke dalam file Tailwind CSS kamu */
+
+@layer components {
+ .custom-container {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ @media (min-width: 640px) {
+  .custom-container {
+   max-width: 640px;
+  }
+ }
+
+ @media (min-width: 768px) {
+  .custom-container {
+   max-width: 768px;
+  }
+ }
+
+ @media (min-width: 1024px) {
+  .custom-container {
+   max-width: 1024px;
+  }
+ }
+
+ @media (min-width: 1280px) {
+  .custom-container {
+   max-width: 1280px;
+  }
+ }
+
+ @media (min-width: 1536px) {
+  .custom-container {
+   max-width: 1536px;
+  }
+ }
+}
