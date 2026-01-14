@@ -17,8 +17,8 @@ const setActive = (index: number) => {
 </script>
 
 <template>
- <div class="w-20 h-full fixed top-0 left-0 z-10 bg-background-primary text-white">
-  <ul class="flex flex-col items-center mt-10 gap-6">
+ <div class="  fixed w-full md:w-20 md:h-full md:top-0 md:left-0 bottom-0 z-10 bg-background-primary text-white">
+  <ul class="flex md:flex-col flex-row items-center md:mt-10 gap-6">
    <li v-for="(item, index) in menuItems" :key="index"
     class="h-20 w-full flex justify-center items-center flex-col cursor-pointer relative" @click="setActive(index)">
     <!-- Icon Component -->
