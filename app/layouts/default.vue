@@ -8,7 +8,7 @@ import LeftBar from '~/components/LeftBar.vue';
  <div>
   <NavBar />
   <left-bar />
-  <div class="bg-button-primary-bg min-h-screen pb-14">
+  <div class="bg-button-primary-bg min-h-screen pb-14 pt-10">
    <slot />
   </div>
   <FootBar />
