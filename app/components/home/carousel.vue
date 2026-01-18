@@ -116,11 +116,25 @@ const banners = [
 }
 
 /* image */
+.image-wrapper {
+ width: 100%;
+ aspect-ratio: 16 / 6;
+ /* desktop */
+}
+
+@media (max-width: 768px) {
+ .image-wrapper {
+  aspect-ratio: 16 / 9;
+  /* mobile */
+ }
+}
+
 .banner-image {
  width: 100%;
  height: 100%;
  object-fit: cover;
 }
+
 
 :deep(.swiper-pagination-bullet) {
  background: #92949C;

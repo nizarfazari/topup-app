@@ -3,6 +3,7 @@ import { PhMagnifyingGlass } from '@phosphor-icons/vue';
 
 const open = ref(false)
 const activeTab = ref<'login' | 'register' | 'phone'>('login')
+const openSearch = ref(false)
 </script>
 
 <template>
@@ -12,13 +13,16 @@ const activeTab = ref<'login' | 'register' | 'phone'>('login')
         <img src="/logo.png" alt="">
       </div>
       <div class="flex gap-2.5 items-center">
-        <div class="">
+        <div class="hidden md:block">
           <label for="search"
             class="border border-background-primary bg-background-primary rounded-4xl py-2 px-5 w-55 flex gap-x-3 text-gray">
             <input id="search" placeholder="Cari" type="text" class="border-none w-full  outline-none" />
             <ph-magnifying-glass :size="24" class="text-gray" />
           </label>
         </div>
+        <button class="flex md:hidden " @click="openSearch = !openSearch">
+          <ph-magnifying-glass :size="24" class="text-gray" />
+        </button>
         <button
           class="rounded-full w-24 bg-secondary  py-2.25 px-6 flex justify-center items-center gap-2 cursor-pointer"
           @click="open = true">
@@ -26,8 +30,19 @@ const activeTab = ref<'login' | 'register' | 'phone'>('login')
         </button>
 
       </div>
+
+
     </div>
   </nav>
+
+  <div v-show="openSearch" class="absolute top-17.5 left-0 w-full z-40 bg-[#1F232B]
+         px-4 py-3 shadow-md md:hidden">
+    <label class="flex items-center gap-3 bg-background-primary
+           rounded-full px-4 py-2 text-gray">
+      <input placeholder="Cari Game" class="w-full outline-none bg-transparent" />
+      <PhMagnifyingGlass :size="20" />
+    </label>
+  </div>
   <BaseModal v-model="open" size="3xl">
     <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-4">
       <div>

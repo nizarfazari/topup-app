@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
 
 <template>
  <div class="dropdown" ref="dropdownRef">
-  <button class="dropdown-button rounded-full" @click="toggle">
+  <button class="dropdown-button rounded-full md:w-full w-auto gap-2" @click="toggle">
    {{ selected.label }}
    <PhCaretDown :size="18" />
   </button>
@@ -72,14 +72,14 @@ onBeforeUnmount(() => {
 <style scoped>
 .dropdown {
  position: relative;
- min-width: 220px;
+ /* min-width: 220px; */
  font-family: sans-serif;
 }
 
 
 .dropdown-button {
- width: 100%;
- padding: 10px 14px;
+
+ padding: 10px 20px;
  background: #272B35;
  color: #fff;
  border: none;

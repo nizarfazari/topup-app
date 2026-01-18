@@ -11,7 +11,7 @@ const isActive = (path: string) => route.path === path
  <footer class=" bg-background-secondary">
   <div class="custom-container mx-auto py-[60px]">
    <div class="flex md:flex-row flex-col text-white gap-10">
-    <div class="flex flex-col gap-[27px] w-[490px] ">
+    <div class="flex flex-col gap-[27px] lg:w-[490px] w-auto">
      <div>
       <img src="/logo.png" alt="">
      </div>
@@ -23,15 +23,25 @@ const isActive = (path: string) => route.path === path
       Magna nunc
       lectus tempus dignissim aenean. </h3>
      <div>
-      <h3 class="font-montserrat text-[16px] font-bold mb-3">Pembayaran Aman</h3>
-      <div class="flex items-center gap-2">
-       <img src="/images/footer/qris.png" class="h-[30px]" alt="">
-       <img src="/images/footer/qris.png" class="h-[30px]" alt="">
-       <img src="/images/footer/qris.png" class="h-[30px]" alt="">
-       <img src="/images/footer/qris.png" class="h-[30px]" alt="">
-       <p>+ 20 lainnya</p>
+      <h3 class="font-montserrat text-[16px] font-bold mb-3">
+       Pembayaran Aman
+      </h3>
+
+      <div class="flex flex-wrap items-center gap-2">
+       <img src="/images/footer/qris.png" class="h-6 md:h-8 object-contain" alt="" />
+
+       <img src="/images/footer/qris.png" class="h-6 md:h-8 object-contain" alt="" />
+
+       <img src="/images/footer/qris.png" class="h-6 md:h-8 object-contain" alt="" />
+
+       <img src="/images/footer/qris.png" class="h-6 md:h-8 object-contain" alt="" />
+
+       <p class="text-sm text-gray whitespace-nowrap">
+        + 20 lainnya
+       </p>
       </div>
      </div>
+
     </div>
 
     <div class="flex md:flex-row flex-col gap-5">
