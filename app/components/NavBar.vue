@@ -7,7 +7,7 @@ const activeTab = ref<'login' | 'register' | 'phone'>('login')
 
 <template>
   <nav class="h-17.5 bg-background-secondary">
-    <div class="container mx-auto flex justify-between items-center h-full">
+    <div class="custom-container mx-auto flex justify-between items-center h-full">
       <div>
         <img src="/logo.png" alt="">
       </div>
