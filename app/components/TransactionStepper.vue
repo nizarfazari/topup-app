@@ -75,10 +75,11 @@ const color = computed(() => {
     </div>
 
     <!-- INFO BOX -->
-    <div v-if="status === 'waiting'" class="flex items-center gap-2 rounded-lg bg-primary/20 p-3 text-sm text-white">
+    <div v-if="status === 'waiting'"
+      class="flex justify-center items-center gap-2 rounded-lg bg-primary/20 p-3 text-sm text-white">
       <PhWallet size="18" />
       Batas Waktu Bayar
-      <span class="text-red-400 font-semibold">
+      <span class="text-danger font-semibold">
         {{ countdown }}
       </span>
     </div>

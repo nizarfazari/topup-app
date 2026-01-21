@@ -17,7 +17,7 @@ const notes = [
     <div class="card ">
      <TransactionStepper status="waiting" countdown="30:00" />
      <div class="mt-5 flex justify-between">
-      <div class="flex items-center gap-5">
+      <div class="flex flex-col md:flex-row items-center gap-5">
        <img src="/images/home/game.png" class=" rounded-lg w-20 h-20" alt="">
        <div class=" text-white ">
         <span class="text-[12px] text-[#00A389]  bg-[#00A3891A] px-4 py-1 rounded-full font-semibold   mx-auto ">
