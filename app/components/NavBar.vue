@@ -50,7 +50,7 @@ const openSearch = ref(false)
         <p class="text-sm text-[#94A3B8]">jhoedoe@gmail.com</p>
       </div>
     </div>
-    <div class="w-full h-[1px] w-full bg-[#161B25] mt-3 mb-2"></div>
+    <div class=" h-[1px] w-full bg-[#161B25] mt-3 mb-2"></div>
     <h1 class="text-danger font-source-sans font-bold text-[14px]">Keluar</h1>
   </div>
 

@@ -96,7 +96,7 @@ const notes = [
       </div>
       <div class="flex justify-between ">
        <span>Total</span>
-       <span class="font-bold text-2xl text-secondary font-bold">Rp. 115.995</span>
+       <span class="text-2xl text-secondary font-bold">Rp. 115.995</span>
       </div>
      </div>
 

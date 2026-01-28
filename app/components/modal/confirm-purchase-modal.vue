@@ -4,6 +4,7 @@ defineProps<{
 }>()
 
 defineEmits(['close', 'confirm'])
+
 </script>
 
 <template>
@@ -61,7 +62,8 @@ defineEmits(['close', 'confirm'])
      Batalkan
     </button>
 
-    <button class="rounded-full bg-secondary px-6 py-2 text-white font-semibold" @click="$emit('confirm')">
+    <button class="rounded-full bg-secondary px-6 py-2 text-white font-semibold cursor-pointer"
+     @click="$emit('confirm')">
      Bayar Sekarang
     </button>
    </div>

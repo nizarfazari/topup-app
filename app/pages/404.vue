@@ -14,7 +14,7 @@ const breadcrumbs = [
     <h1 class="text-2xl font-semibold mb-2.5">404 | Not Found</h1>
     <p class="text-base font-normal">Halaman yang Anda cari tidak dapat ditemukan.</p>
    </div>
-   <button class="py-3 px-8 bg-[#00929D] rounded-full text-white text-base font-bold font-montserrat">Kembali</button>
+   <button class="py-3 px-8 bg-secondary rounded-full text-white text-base font-bold font-montserrat">Kembali</button>
   </div>
  </div>
 
