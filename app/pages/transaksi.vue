@@ -65,8 +65,8 @@ const transactions = [
     <div class="flex flex-col md:flex-row md:items-center items-start justify-between gap-5">
       <h1 class="text-white uppercase font-bold font-open-sans">Daftar Transaksi</h1>
       <div class="flex items-center gap-3">
-        <DropdownHome :options="status" v-model="selectedStatus" />
-        <DropdownHome :options="ranges" v-model="selectedRange" />
+        <DropdownHome :options="status" :model-value="selectedStatus" />
+        <DropdownHome :options="ranges" :model-value="selectedRange" />
       </div>
     </div>
 

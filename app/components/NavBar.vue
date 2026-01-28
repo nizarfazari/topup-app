@@ -2,6 +2,7 @@
 import { PhMagnifyingGlass } from '@phosphor-icons/vue';
 
 const open = ref(false)
+const isLogged = ref(false)
 const activeTab = ref<'login' | 'register' | 'phone'>('login')
 const openSearch = ref(false)
 </script>
@@ -23,17 +24,37 @@ const openSearch = ref(false)
         <button class="flex md:hidden " @click="openSearch = !openSearch">
           <ph-magnifying-glass :size="24" class="text-gray" />
         </button>
-        <button
+        <button v-if="!isLogged"
           class="rounded-full w-24 bg-secondary  py-2.25 px-6 flex justify-center items-center gap-2 cursor-pointer"
           @click="open = true">
           <p class="font-montserrat text-white font-bold">Masuk</p>
         </button>
-
+        <div class="relative" v-else>
+          <img src="/profil.png" alt="">
+          <img src="/icons/badge.svg" alt="" class="absolute -bottom-[5px] -right-[5px]">
+        </div>
       </div>
 
 
     </div>
   </nav>
+
+  <div v-if="false" class="card-nav-auth absolute top-17.5 z-30 right-10 rounded-xl">
+    <div class="flex gap-4 ">
+      <div class="relative">
+        <img src="/profil.png" alt="">
+        <img src="/icons/badge.svg" alt="" class="absolute -bottom-[5px] -right-[5px]">
+      </div>
+      <div class="font-source-sans">
+        <h1 class="text-white font-bold text-[14px] ">Jhoe Doe</h1>
+        <p class="text-sm text-[#94A3B8]">jhoedoe@gmail.com</p>
+      </div>
+    </div>
+    <div class="w-full h-[1px] w-full bg-[#161B25] mt-3 mb-2"></div>
+    <h1 class="text-danger font-source-sans font-bold text-[14px]">Keluar</h1>
+  </div>
+
+
 
   <div v-show="openSearch" class="absolute top-17.5 left-0 w-full z-40 bg-[#1F232B]
          px-4 py-3 shadow-md md:hidden">
@@ -43,6 +64,8 @@ const openSearch = ref(false)
       <PhMagnifyingGlass :size="20" />
     </label>
   </div>
+
+
   <BaseModal v-model="open" size="3xl">
     <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-4">
       <div>
@@ -164,4 +187,13 @@ const openSearch = ref(false)
   </BaseModal>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card-nav-auth {
+  box-shadow: 0px 4px 4px 0px #0000004D;
+  box-shadow: 0px 8px 12px 6px #00000026;
+  padding: 10px;
+  width: 220px;
+  background: #272B35;
+  border: 1px solid #161B25
+}
+</style>
