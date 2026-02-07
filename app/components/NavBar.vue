@@ -2,9 +2,22 @@
 import { PhMagnifyingGlass } from "@phosphor-icons/vue";
 
 const open = ref(false);
-const isLogged = ref(false);
+const { isLogged, notifyAuthChange } = useAuth();
 const activeTab = ref<"login" | "register" | "phone">("login");
 const openSearch = ref(false);
+
+const showProfileMenu = ref(false);
+
+// Handle login success
+const handleLoginSuccess = () => {
+  open.value = false;
+};
+
+// Handle logout
+const handleLogout = () => {
+  localStorage.removeItem("auth");
+  notifyAuthChange();
+};
 </script>
 
 <template>
@@ -40,7 +53,11 @@ const openSearch = ref(false);
         >
           <p class="font-montserrat text-white font-bold">Masuk</p>
         </button>
-        <div class="relative" v-else>
+        <div
+          v-else
+          class="relative cursor-pointer"
+          @click="showProfileMenu = !showProfileMenu"
+        >
           <img src="/profil.png" alt="" />
           <img
             src="/icons/badge.svg"
@@ -52,26 +69,32 @@ const openSearch = ref(false);
     </div>
   </nav>
 
-  <div
-    v-if="true"
-    class="card-nav-auth absolute top-17.5 z-30 right-10 rounded-xl"
-  >
-    <div class="flex gap-4">
-      <div class="relative">
-        <img src="/profil.png" alt="" />
-        <img
-          src="/icons/badge.svg"
-          alt=""
-          class="absolute -bottom-[5px] -right-[5px]"
-        />
+  <div v-if="isLogged && showProfileMenu">
+    <div class="fixed inset-0 z-20" @click="showProfileMenu = false"></div>
+
+    <div class="card-nav-auth absolute top-17.5 z-30 right-10 rounded-xl">
+      <div class="flex gap-4">
+        <div class="relative">
+          <img src="/profil.png" alt="" />
+          <img
+            src="/icons/badge.svg"
+            alt=""
+            class="absolute -bottom-[5px] -right-[5px]"
+          />
+        </div>
+        <div class="font-source-sans">
+          <h1 class="text-white font-bold text-[14px]">Jhoe Doe</h1>
+          <p class="text-sm text-[#94A3B8]">jhoedoe@gmail.com</p>
+        </div>
       </div>
-      <div class="font-source-sans">
-        <h1 class="text-white font-bold text-[14px]">Jhoe Doe</h1>
-        <p class="text-sm text-[#94A3B8]">jhoedoe@gmail.com</p>
-      </div>
+      <div class="h-[1px] w-full bg-[#161B25] mt-3 mb-2"></div>
+      <h1
+        class="text-danger font-source-sans font-bold text-[14px] cursor-pointer"
+        @click="handleLogout"
+      >
+        Keluar
+      </h1>
     </div>
-    <div class="h-[1px] w-full bg-[#161B25] mt-3 mb-2"></div>
-    <h1 class="text-danger font-source-sans font-bold text-[14px]">Keluar</h1>
   </div>
 
   <div
@@ -152,6 +175,7 @@ const openSearch = ref(false);
           <NavbarLogin
             v-if="activeTab === 'login'"
             @forgot="activeTab = 'phone'"
+            @success="handleLoginSuccess"
           />
 
           <NavbarRegister v-else-if="activeTab == 'register'" />

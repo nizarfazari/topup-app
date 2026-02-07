@@ -2,10 +2,15 @@
 import { reactive, computed } from "vue";
 import useVuelidate from "@vuelidate/core";
 import { required, minLength, helpers } from "@vuelidate/validators";
+import { useToast } from "#imports";
 
 const emit = defineEmits<{
-  (e: "forgot"): void;
+  (e: "forgot" | "success"): void;
 }>();
+
+const toast = useToast();
+const router = useRouter();
+const { notifyAuthChange } = useAuth();
 
 const form = reactive({
   phone: "",
@@ -30,7 +35,7 @@ const handleSubmit = async () => {
   if (!isValid) return;
 
   // LOGIN STATIS DULU
-  if (form.phone === "08123456" && form.password === "admin") {
+  if (form.phone === "08123456" && form.password === "admin123") {
     const dataLogin = {
       isLogin: true,
       phone: form.phone,
@@ -38,13 +43,27 @@ const handleSubmit = async () => {
     };
 
     localStorage.setItem("auth", JSON.stringify(dataLogin));
+    notifyAuthChange();
 
-    alert("Login berhasil (statis)");
+    toast.add({
+      title: "Login Berhasil",
+      description: "Selamat datang kembali!",
+      color: "success",
+      icon: "i-ph-check-circle",
+    });
+
+    emit("success");
+    router.push("/");
 
     return;
   }
 
-  alert("Nomor atau password salah");
+  toast.add({
+    title: "Login Gagal",
+    description: "Nomor handphone atau password salah",
+    color: "error",
+    icon: "i-ph-warning-circle",
+  });
 };
 </script>
 

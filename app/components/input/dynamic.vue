@@ -77,7 +77,7 @@ const validateInput = (value: string): boolean => {
           }
         "
         :class="[
-          'appearance-none bg-background-primary h-[40px] block w-full px-5 border rounded-[8px] text-[14px] text-[#D1D1D6] placeholder-[#D1D1D6] focus:outline-none focus:ring-primer focus:border-primer',
+          'appearance-none bg-background-primary h-[45px] block w-full px-5 border rounded-[8px] text-[14px] text-[#D1D1D6] placeholder-[#D1D1D6] focus:outline-none focus:ring-primer focus:border-primer',
           hasError ? 'border-danger' : 'border-[#272B35]',
         ]"
       />
@@ -93,12 +93,24 @@ const validateInput = (value: string): boolean => {
       </button>
     </div>
 
-    <div v-if="hasError" class="mt-2 text-[12px] text-danger">
-      <p v-for="error in errorMessage" :key="error.$uid">
-        {{ error.$message }}
-      </p>
-    </div>
+    <transition name="fade">
+      <div v-if="hasError" class="mt-1 min-h-[18px] text-[12px] text-danger">
+        <p v-for="error in errorMessage" :key="error.$uid">
+          {{ error.$message }}
+        </p>
+      </div>
+    </transition>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
