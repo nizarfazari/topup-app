@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { PhX } from "@phosphor-icons/vue";
 import voucherImg from "@/assets/images/payment/voucher.png";
-const phone = ref("");
+const promoCode = ref("");
 
 const inputRef = ref<HTMLInputElement | null>(null);
 
 const clear = () => {
-  phone.value = "";
+  promoCode.value = "";
   inputRef.value?.focus();
 };
 
@@ -15,6 +15,14 @@ const showVoucher = ref(true);
 const cancelVoucher = () => {
   showVoucher.value = false;
 };
+
+const emit = defineEmits<{
+  (e: "update", data: { promoCode: string }): void;
+}>();
+
+watch(promoCode, (newValue) => {
+  emit("update", { promoCode: newValue });
+});
 </script>
 
 <template>
@@ -33,7 +41,7 @@ const cancelVoucher = () => {
         class="flex items-center gap-2 flex-1 rounded-md px-4 py-4 bg-background-secondary border border-secondary"
       >
         <input
-          v-model="phone"
+          v-model="promoCode"
           ref="inputRef"
           type="text"
           class="flex-1 bg-transparent outline-none text-base text-[#B5B5B5]"
