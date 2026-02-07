@@ -21,7 +21,7 @@ const notes = [
     <div class="flex md:flex-row flex-col gap-5">
       <div class="flex-1 h-fit space-y-5">
         <div class="card">
-          <TransactionStepper status="success" countdown="30:00" />
+          <TransactionStepper status="waiting" countdown="30:00" />
           <div class="mt-5 flex justify-between">
             <div class="flex flex-col md:flex-row items-center gap-5">
               <img

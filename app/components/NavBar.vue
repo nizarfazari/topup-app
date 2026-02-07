@@ -25,9 +25,9 @@ const handleLogout = () => {
     <div
       class="custom-container mx-auto flex justify-between items-center h-full"
     >
-      <div>
+      <NuxtLink href="/">
         <img src="/logo.png" alt="" />
-      </div>
+      </NuxtLink>
       <div class="flex gap-2.5 items-center">
         <div class="hidden md:block">
           <label
