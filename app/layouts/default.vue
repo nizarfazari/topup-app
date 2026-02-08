@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import LeftBar from '~/components/LeftBar.vue';
-
-
+import LeftBar from "~/components/LeftBar.vue";
 </script>
 
 <template>
- <div>
-  <NavBar />
-  <left-bar />
-  <div class="bg-button-primary-bg min-h-screen pb-14 pt-10">
-   <slot />
+  <div>
+    <NavBar />
+    <left-bar />
+    <div class="bg-button-primary-bg min-h-screen pb-14 pt-10">
+      <slot />
+    </div>
+    <FootbarHome />
   </div>
-  <FootBar />
- </div>
 </template>

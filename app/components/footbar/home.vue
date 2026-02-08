@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
+interface SiteMapLink {
+  text: string;
+  to: string;
+}
 
-const route = useRoute();
-
-const isActive = (path: string) => route.path === path;
+const siteMapLinks: SiteMapLink[] = [
+  { text: "Tentang Kami", to: "/" },
+  { text: "Syarat & Ketentuan", to: "/syarat-ketentuan" },
+  { text: "Kebijakan Privasi", to: "/kebijakan-privasi" },
+  { text: "Blog", to: "/blog" },
+  { text: "Affiliate", to: "/affiliate" },
+];
 </script>
 
 <template>
@@ -83,31 +90,18 @@ const isActive = (path: string) => route.path === path;
             </ul>
           </div>
           <div>
-            <h3 class="font-montserrat text-[16px] font-bold mb-5">Site Map</h3>
+            <h3 class="font-montserrat text-[16px] font-bold mb-5">
+              Informasi
+            </h3>
             <ul
               class="flex flex-col gap-3 list-disc list-inside font-normal text-primary"
             >
-              <li>
+              <li v-for="link in siteMapLinks" :key="link.to">
                 <NuxtLink
-                  :class="isActive('/') ? 'text-primary' : 'text-white'"
-                  to="/"
-                  class="font-open-sans text-[16px]"
+                  :to="link.to"
+                  class="font-open-sans text-[16px] text-white hover:text-primary transition-colors duration-200"
                 >
-                  Tentang Kami
-                </NuxtLink>
-              </li>
-
-              <li>
-                <NuxtLink
-                  :class="
-                    isActive('/syarat-ketentuan')
-                      ? 'text-primary '
-                      : 'text-white'
-                  "
-                  to="/syarat-ketentuan"
-                  class="font-open-sans text-[16px]"
-                >
-                  Syarat & Ketentuan
+                  {{ link.text }}
                 </NuxtLink>
               </li>
             </ul>
