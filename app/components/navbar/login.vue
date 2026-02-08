@@ -97,6 +97,7 @@ const handleSubmit = async () => {
         label="Nomor Handphone"
         placeholder="Masukkan no handphone"
         v-model="form.phone"
+        is-phone
         :has-error="v$.phone.$error"
         :error-message="v$.phone.$errors"
       />
