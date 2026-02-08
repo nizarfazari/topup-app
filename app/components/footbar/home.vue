@@ -5,7 +5,7 @@ interface SiteMapLink {
 }
 
 const siteMapLinks: SiteMapLink[] = [
-  { text: "Tentang Kami", to: "/" },
+  { text: "Tentang Kami", to: "/tentang-kami" },
   { text: "Syarat & Ketentuan", to: "/syarat-ketentuan" },
   { text: "Kebijakan Privasi", to: "/kebijakan-privasi" },
   { text: "Blog", to: "/blog" },
@@ -61,7 +61,7 @@ const siteMapLinks: SiteMapLink[] = [
           </div>
         </div>
 
-        <div class="flex md:flex-row flex-col gap-5">
+        <div class="flex grow justify-evenly md:flex-row flex-col gap-5">
           <div>
             <h3 class="font-montserrat text-[16px] font-bold mb-5">
               Kontak Kami
@@ -111,10 +111,37 @@ const siteMapLinks: SiteMapLink[] = [
               Social Media
             </h3>
             <div class="mt-3 flex items-center gap-1.5">
-              <img src="/images/footer/fb.png" alt="" />
-              <img src="/images/footer/x.png" alt="" />
-              <img src="/images/footer/ig.png" alt="" />
-              <img src="/images/footer/tt.png" alt="" />
+              <a
+                href="https://facebook.com/usernamekamu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/footer/fb.png" alt="Facebook" />
+              </a>
+
+              <a
+                href="https://twitter.com/usernamekamu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/footer/x.png" alt="Twitter / X" />
+              </a>
+
+              <a
+                href="https://instagram.com/usernamekamu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/footer/ig.png" alt="Instagram" />
+              </a>
+
+              <a
+                href="https://tiktok.com/@usernamekamu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/images/footer/tt.png" alt="TikTok" />
+              </a>
             </div>
           </div>
         </div>
