@@ -53,7 +53,7 @@ const topupError = computed(() => {
         :class="[
           'rounded-xl card-topup font-open-sans cursor-pointer transition',
           activeIndex === index && '!bg-secondary ',
-          topupError && 'border-danger',
+          topupError && '!border-danger',
         ]"
         @click="activeIndex = index"
       >

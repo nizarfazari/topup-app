@@ -70,7 +70,7 @@ const paymentError = computed(() => {
         :class="[
           'flex justify-between card-payment cursor-pointer transition rounded-xl p-3',
           activePayment === item.id && '!bg-secondary',
-          paymentError && 'border-danger',
+          paymentError && '!border-danger',
         ]"
         @click="activePayment = item.id"
       >
