@@ -34,25 +34,25 @@ const siteMapLinks: SiteMapLink[] = [
             <div class="flex flex-wrap items-center gap-2">
               <img
                 src="/images/footer/qris.png"
-                class="h-6 md:h-8 object-contain"
+                class="h-6 md:h-7 object-contain"
                 alt=""
               />
 
               <img
-                src="/images/footer/qris.png"
-                class="h-6 md:h-8 object-contain"
+                src="/images/footer/dana.png"
+                class="h-6 md:h-7 object-contain"
                 alt=""
               />
 
               <img
-                src="/images/footer/qris.png"
-                class="h-6 md:h-8 object-contain"
+                src="/images/footer/gopay.png"
+                class="h-6 md:h-7 object-contain"
                 alt=""
               />
 
               <img
-                src="/images/footer/qris.png"
-                class="h-6 md:h-8 object-contain"
+                src="/images/footer/ovo.png"
+                class="h-6 md:h-7 object-contain"
                 alt=""
               />
 
